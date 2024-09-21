@@ -1,4 +1,11 @@
-numbers_of_subject = int(input("Enter Numbers Of Subject: "))
+def get_valid_input(prompt):
+    while True:
+        try:
+            return int(input(prompt))
+        except:
+            print("Invalid Value Please Type Number")
+
+numbers_of_subject = get_valid_input("Enter Numbers Of Subject: ") 
 pass_marks = int(input("Enter Pass Marks: "))
 marks = []
 all_passed = True
