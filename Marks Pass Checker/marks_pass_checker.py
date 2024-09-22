@@ -19,7 +19,7 @@ marks = []
 all_passed = True
 
 for subject in range(numbers_of_subject):
-    mark = int(input("Enter marks for subject "+str(subject)+" : "))
+    mark = int(input("Enter marks for subject "+str(subject+1)+" : "))
     marks.append(mark)
 
 for mark in marks:
