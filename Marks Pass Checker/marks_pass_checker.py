@@ -4,26 +4,23 @@ def get_valid_input(prompt):
             value = input(prompt)
             if value.isalpha():
                 raise ValueError("Invalid Value.Value Must Be Number.")
-            else:
-                value = int(value)
+            value = int(value)
                 
             if value == 0:
                 raise ValueError("Value Can't Be 0.Please Try Again.")
-            return int(input(prompt))
+            return value
         except ValueError as e:
             print(e)
 
 numbers_of_subject = get_valid_input("Enter Numbers Of Subject: ") 
 pass_marks = int(input("Enter Pass Marks: "))
-marks = []
 all_passed = True
 
-for subject in range(numbers_of_subject):
+for subject in range(1,numbers_of_subject +1):
     mark = int(input("Enter marks for subject "+str(subject)+" : "))
-    marks.append(mark)
+    if mark < pass_marks:
+        all_passed = False
 
-for mark in marks:
-    all_passed = all_passed and mark >= pass_marks
 
 if all_passed:
     print("Pass")
