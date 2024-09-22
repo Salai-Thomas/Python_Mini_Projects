@@ -1,9 +1,17 @@
 def get_valid_input(prompt):
     while True:
         try:
+            value = input(prompt)
+            if value.isalpha():
+                raise ValueError("Invalid Value.Value Must Be Number.")
+            else:
+                value = int(value)
+                
+            if value == 0:
+                raise ValueError("Value Can't Be 0.Please Try Again.")
             return int(input(prompt))
-        except:
-            print("Invalid Value Please Type Number")
+        except ValueError as e:
+            print(e)
 
 numbers_of_subject = get_valid_input("Enter Numbers Of Subject: ") 
 pass_marks = int(input("Enter Pass Marks: "))
