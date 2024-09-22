@@ -15,7 +15,6 @@ def get_valid_input(prompt):
 
 numbers_of_subject = get_valid_input("Enter Numbers Of Subject: ") 
 pass_marks = int(input("Enter Pass Marks: "))
-marks = []
 all_passed = True
 
 for subject in range(1,numbers_of_subject+1):
