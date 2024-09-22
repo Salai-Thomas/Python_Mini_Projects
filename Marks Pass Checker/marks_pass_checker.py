@@ -9,7 +9,7 @@ def get_valid_input(prompt):
                 
             if value == 0:
                 raise ValueError("Value Can't Be 0.Please Try Again.")
-            return int(input(prompt))
+            return value
         except ValueError as e:
             print(e)
 
@@ -18,12 +18,10 @@ pass_marks = int(input("Enter Pass Marks: "))
 marks = []
 all_passed = True
 
-for subject in range(numbers_of_subject):
+for subject in range(1,numbers_of_subject+1):
     mark = int(input("Enter marks for subject "+str(subject)+" : "))
-    marks.append(mark)
-
-for mark in marks:
-    all_passed = all_passed and mark >= pass_marks
+    if mark < 40:
+        all_passed = False
 
 if all_passed:
     print("Pass")
